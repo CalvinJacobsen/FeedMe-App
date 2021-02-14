@@ -1,17 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&display=swap" rel="stylesheet">
+
     <title>FoodFinder</title>
 </head>
-<body>
-    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="java.js"></script>
+<body>
+
+    <!-- bootstrap navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid navbar-container">
+            <a href="restaurants.html" class="restaurantsButton"><svg xmlns="http://www.w3.org/2000/svg" width="38"
+                    height="38" fill="white" class="bi bi-shop-window" viewBox="0 0 16 16">
+                    <path
+                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z" />
+                </svg><br>
+                <div>Restaurants</div>
+            </a>
+            <a href="maps.html" class="restaurantsButton mapsButton">
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-geo-alt"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+                <br>
+                <div>Directions</div>
+            </a>
+
+            <div id="insetBgd">
+                <h5 class="titleText" href="index.html">Feed.Me</h5>
+            </div>
+            <form class="d-flex">
+                <div class="formQ">Do you know what you want?</div>
+                <input class="form-control me-3" id="restarauntSearchGo"type="search" placeholder="Search the restaurant here..."
+                    aria-label="Search">
+                <button class="btn btn-outline-success go-btn" type="submit"><i>GO!</i></button>
+            </form>
+        </div>
+    </nav>
+    <!-- navbar end-->
+
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 start">
+                <div class="centerStart" style="text-align: center;">
+
+                    <!--City and State form-->
+                    <form action="submit" class="zipCodeForm" id="zipCodeForm" onSubmit="verify();">
+                        <p>To start please enter your city and state below.</p>
+                        <input type="text" placeholder="Ex: Minneapolis, MN" id="city-state" class="inputField"></input>
+                        <button id="submit-btn" class="optionButtons">Submit</button>
+                        <div id="blankInput"></div>
+                    </form>
+
+                    <!--buttons for choosing the food genre-->
+                    <div class="starterTag" id="starterTag">
+                        OK! Let's get you started!<br>
+                        Which of these sound good to you?<br>
+
+                        <div class="button2"> OK. How about any of these?</div>
+                        <div class="buttonsDiv">
+                            <button id="foodButton" class="optionButtons">American</button>
+                            <button id="foodButton" class="optionButtons">Fast Food</button>
+                            <button id="foodButton" class="optionButtons">Pizza</button>
+                            <button id="foodButton" class="optionButtons">Mexican</button>
+                            <button id="foodButton" class="optionButtons">Sandwich</button>
+                            <button id="foodButton" class="optionButtons">Italian</button>
+                            <button id="foodButton" class="optionButtons">Burger</button>
+                            <button id="foodButton" class="optionButtons">BBQ</button>
+                            <button id="foodButton" class="optionButtons button2">Azerbaijani</button>
+                            <button id="foodButton" class="optionButtons button2">French</button>
+                            <button id="foodButton" class="optionButtons button2">Middle Eastern</button>
+                            <button id="foodButton" class="optionButtons button2">Vietnamese</button>
+                            <button id="foodButton" class="optionButtons button2">Mediterranean</button>
+                            <button id="foodButton" class="optionButtons button2">Cantonese</button>
+                            <button id="foodButton" class="optionButtons button2">Morroccan</button>
+                            <button id="foodButton" class="optionButtons button2">Irish</button>
+                        </div>
+                        <div style="text-align: right;">
+                            <button class="optionButtons noneOption">None of these options sound good! >></button>
+                            <button class="optionButtons button2">Neither of these sound good either! >></button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

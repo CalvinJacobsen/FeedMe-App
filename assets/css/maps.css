@@ -1,0 +1,20 @@
+#restaurant-name {
+    color: white;
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#map {
+    height: 500px;
+    text-shadow: none;
+  }
+
+.directions {
+    background-color: white;
+}
